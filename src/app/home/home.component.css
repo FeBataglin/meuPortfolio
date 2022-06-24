@@ -17,19 +17,19 @@ section {
     scroll-snap-align: start;
 }
 
-.one {
+.sectionOne {
     background: rgb(36, 164, 138);
 }
 
-.two {
+.sectionTwo {
     background: #ec4b5b;
 }
 
-.three {
+.sectionThree {
     background: rgb(67, 91, 175);
 }
 
-.four {
+.sectionFour {
     background: lightsalmon;
 }
 

@@ -32,13 +32,13 @@ export class HomeComponent implements OnInit {
     $('section').each(function (this: HTMLButtonElement) {
       if ($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
         let section = $(this).attr('id');
-        if (section === 'one') {
+        if (section === 'sectionOne') {
 
           $(window).bind('mousewheel DOMMouseScroll', function (event: any) {
             if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
             }
             else {
-              (document.getElementById('two') as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              (document.getElementById('sectionTwo') as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
             }
           });
 
@@ -65,13 +65,13 @@ export class HomeComponent implements OnInit {
 
           let section = $(this).attr('id');
 
-          if (section === 'one') {
+          if (section === 'sectionOne') {
 
             $(window).bind('mousewheel DOMMouseScroll', function (event: any) {
               if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
               }
               else {
-                (document.getElementById('two') as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+                (document.getElementById('sectionTwo') as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
               }
             });
 
@@ -86,14 +86,14 @@ export class HomeComponent implements OnInit {
 
             $(button_four).removeClass('navigation-four-active');
             $(button_four).addClass('navigation-four');
-          } else if (section === 'two') {
+          } else if (section === 'sectionTwo') {
 
             $(window).bind('mousewheel DOMMouseScroll', function (event: any) {
               if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-                (document.getElementById('one') as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+                (document.getElementById('sectionOne') as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
               }
               else {
-                (document.getElementById('three') as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+                (document.getElementById('sectionThree') as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
               }
             });
 
@@ -108,14 +108,14 @@ export class HomeComponent implements OnInit {
 
             $(button_four).removeClass('navigation-four-active');
             $(button_four).addClass('navigation-four');
-          } else if (section === 'three') {
+          } else if (section === 'sectionThree') {
 
             $(window).bind('mousewheel DOMMouseScroll', function (event: any) {
               if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-                (document.getElementById('two') as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+                (document.getElementById('sectionTwo') as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
               }
               else {
-                (document.getElementById('four') as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+                (document.getElementById('sectionFour') as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
               }
             });
 
@@ -130,11 +130,11 @@ export class HomeComponent implements OnInit {
 
             $(button_four).removeClass('navigation-four-active');
             $(button_four).addClass('navigation-four');
-          } else if (section === 'four') {
+          } else if (section === 'sectionFour') {
 
             $(window).bind('mousewheel DOMMouseScroll', function (event: any) {
               if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-                (document.getElementById('three') as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+                (document.getElementById('sectionThree') as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
               }
             });
 
