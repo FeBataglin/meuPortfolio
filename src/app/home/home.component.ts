@@ -14,8 +14,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     navigation();
-    
-    //this.navigationConfigs();
+    this.navigationConfigs();
   }
   
   scrollTo(element: any): void {
