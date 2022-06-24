@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PoMenuItem } from '@po-ui/ng-components';
 
 declare function navigation(): any;
 declare var $: any;
@@ -15,7 +14,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     navigation();
-    this.navigationConfigs();
+    
+    //this.navigationConfigs();
   }
   
   scrollTo(element: any): void {
