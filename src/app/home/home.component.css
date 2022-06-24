@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    z-index: -1;
+    scroll-snap-align: start;
+}
+
+.one {
+    background: rgb(36, 164, 138);
+}
+
+.two {
+    background: #ec4b5b;
+}
+
+.three {
+    background: rgb(67, 91, 175);
+}
+
+.four {
+    background: lightsalmon;
+}
+
+.navigationButton {
+    margin: 0;
+    position: fixed;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    right: 0;
+}
+
+.navigationButton .icon {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 15px;
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+}
+
+.navigationButton .icon:hover .tooltip-one,
+.navigationButton .icon:hover .tooltip-two,
+.navigationButton .icon:hover .tooltip-three,
+.navigationButton .icon:hover .tooltip-four {
+    top: 5px;
+    right: 50px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.navigationButton .navigation-one:hover,
+.navigationButton .navigation-one:hover .tooltip-one,
+.navigationButton .navigation-one:hover .tooltip-one::before {
+    transform: scale(1.2);
+    background-color: rgb(36, 164, 138);
+    color: #ffffff;
+}
+
+.navigationButton .navigation-two:hover,
+.navigationButton .navigation-two:hover .tooltip-two,
+.navigationButton .navigation-two:hover .tooltip-two::before {
+    transform: scale(1.2);
+    background-color: #ec4b5b;
+    color: #ffffff;
+}
+
+.navigationButton .navigation-three:hover,
+.navigationButton .navigation-three:hover .tooltip-three,
+.navigationButton .navigation-three:hover .tooltip-three::before {
+    transform: scale(1.2);
+    background-color: rgb(67, 91, 175);
+    color: #ffffff;
+}
+
+.navigationButton .navigation-four:hover,
+.navigationButton .navigation-four:hover .tooltip-four,
+.navigationButton .navigation-four:hover .tooltip-four::before {
+    transform: scale(1.2);
+    background-color: lightsalmon;
+    color: #ffffff;
+}
+
+.navigationButton .navigation-one:hover::after {
+    content: 'Início';
+    position: absolute;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    right: 45px;
+    color: #ffffff;
+    bottom: 6px;
+}
+
+.navigationButton .navigation-two:hover::after {
+    content: 'Sobre';
+    position: absolute;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    right: 45px;
+    color: #ffffff;
+    bottom: 6px;
+}
+
+.navigationButton .navigation-three:hover::after {
+    content: 'Portfólio';
+    position: absolute;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    right: 45px;
+    color: #ffffff;
+    bottom: 6px;
+}
+
+.navigationButton .navigation-four:hover::after {
+    content: 'Contato';
+    position: absolute;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    right: 45px;
+    color: #ffffff;
+    bottom: 6px;
+}
+
+.navigationButton .navigation-one-active {
+    transform: scale(1.2);
+    background-color: rgb(36, 164, 138);
+    color: #ffffff;
+}
+
+.navigationButton .navigation-one-active::after {
+    content: 'Início';
+    position: absolute;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    right: 45px;
+    color: #ffffff;
+    bottom: 6px;
+}
+
+.navigationButton .navigation-two-active {
+    transform: scale(1.2);
+    background-color: #ec4b5b;
+    color: #ffffff;
+}
+
+.navigationButton .navigation-two-active::after {
+    content: 'Sobre';
+    position: absolute;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    right: 45px;
+    color: #ffffff;
+    bottom: 6px;
+}
+
+.navigationButton .navigation-three-active {
+    transform: scale(1.2);
+    background-color: rgb(67, 91, 175);
+    color: #ffffff;
+}
+
+.navigationButton .navigation-three-active::after {
+    content: 'Portfólio';
+    position: absolute;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    right: 45px;
+    color: #ffffff;
+    bottom: 6px;
+}
+
+.navigationButton .navigation-four-active {
+    transform: scale(1.2);
+    background-color: lightsalmon;;
+    color: #ffffff;
+}
+
+.navigationButton .navigation-four-active::after {
+    content: 'Contato';
+    position: absolute;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    right: 45px;
+    color: #ffffff;
+    bottom: 6px;
+}
