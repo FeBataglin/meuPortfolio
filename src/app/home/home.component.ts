@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 declare function navigation(): any;
+declare function addAndRemoveClassOnKeyUp(id: any): any;
 declare var $: any;
 
 @Component({
@@ -15,13 +16,69 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     navigation();
     this.navigationConfigs();
+    //this.navigationConfigs2();
   }
-  
+
   scrollTo(element: any): void {
     (document.getElementById(element) as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   }
 
   navigationConfigs() {
+    var button_one = document.getElementById('bt-one');
+    var button_two = document.getElementById('bt-two');
+    var button_three = document.getElementById('bt-three');
+    var button_four = document.getElementById('bt-four');
+
+    //quando abre a tela, posicionar na section 1
+    $('section').each(function (this: HTMLButtonElement) {
+      if ($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
+        let section = $(this).attr('id');
+        if (section === 'sectionOne') {
+
+          $(button_one).removeClass('navigation-one');
+          $(button_one).addClass('navigation-one-active');
+
+          $(button_two).removeClass('navigation-two-active');
+          $(button_two).addClass('navigation-two');
+
+          $(button_three).removeClass('navigation-three-active');
+          $(button_three).addClass('navigation-three');
+
+          $(button_four).removeClass('navigation-four-active');
+          $(button_four).addClass('navigation-four');
+        }
+      }
+    })
+
+    $(document).keydown(function (e: any) {
+      
+      var $activeSection = $("section.active"), $newActiveSection;
+
+      if (e.which == 38) {
+        // Cima
+        $newActiveSection = $activeSection.prev("section");
+        if (!$newActiveSection.length) {
+          $newActiveSection = $("section").last();
+        }
+        addAndRemoveClassOnKeyUp($newActiveSection[0]);
+      } else if (e.which == 40) {
+        // Baixo
+        $newActiveSection = $activeSection.next("section");
+        if (!$newActiveSection.length) {
+          $newActiveSection = $("section").first();
+        }
+        addAndRemoveClassOnKeyUp($newActiveSection[0]);
+      }
+      $activeSection.removeClass("active");
+      $newActiveSection.addClass("active");
+
+      $(window).scrollTop($newActiveSection.offset().top);
+
+      e.preventDefault();
+    });
+  }
+
+  /*navigationConfigs2() {
     var button_one = document.getElementById('bt-one');
     var button_two = document.getElementById('bt-two');
     var button_three = document.getElementById('bt-three');
@@ -152,6 +209,6 @@ export class HomeComponent implements OnInit {
         }
       });
     });
-  }
+  }*/
 
 }

@@ -61,3 +61,66 @@ function navigation() {
     }
 }
 
+function addAndRemoveClassOnKeyUp(element) {
+    var button_one = document.getElementById('bt-one');
+    var button_two = document.getElementById('bt-two');
+    var button_three = document.getElementById('bt-three');
+    var button_four = document.getElementById('bt-four');
+
+    if (element.id === 'sectionOne') {
+
+        $(button_one).removeClass('navigation-one');
+        $(button_one).addClass('navigation-one-active');
+
+        $(button_two).removeClass('navigation-two-active');
+        $(button_two).addClass('navigation-two');
+
+        $(button_three).removeClass('navigation-three-active');
+        $(button_three).addClass('navigation-three');
+
+        $(button_four).removeClass('navigation-four-active');
+        $(button_four).addClass('navigation-four');
+    } else if (element.id === 'sectionTwo') {
+
+        $(button_two).removeClass('navigation-two');
+        $(button_two).addClass('navigation-two-active');
+
+        $(button_one).removeClass('navigation-one-active');
+        $(button_one).addClass('navigation-one');
+
+        $(button_three).removeClass('navigation-three-active');
+        $(button_three).addClass('navigation-three');
+
+        $(button_four).removeClass('navigation-four-active');
+        $(button_four).addClass('navigation-four');
+    } else if (element.id === 'sectionThree') {
+
+        $(button_three).removeClass('navigation-three');
+        $(button_three).addClass('navigation-three-active');
+
+        $(button_one).removeClass('navigation-one-active');
+        $(button_one).addClass('navigation-one');
+
+        $(button_two).removeClass('navigation-two-active');
+        $(button_two).addClass('navigation-two');
+
+        $(button_four).removeClass('navigation-four-active');
+        $(button_four).addClass('navigation-four');
+    } else if (element.id === 'sectionFour') {
+
+        $(button_four).removeClass('navigation-four');
+        $(button_four).addClass('navigation-four-active');
+
+        $(button_one).removeClass('navigation-one-active');
+        $(button_one).addClass('navigation-one');
+
+        $(button_two).removeClass('navigation-two-active');
+        $(button_two).addClass('navigation-two');
+
+        $(button_three).removeClass('navigation-three-active');
+        $(button_three).addClass('navigation-three');
+    }
+}
+
+
+
