@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-declare function navigation(): any;
-declare function addAndRemoveClassOnKeyUp(id: any): any;
+declare function navigationWithClick(): any;
+declare function addAndRemoveClassOnKeyUp(id: any, section: any): any;
 declare var $: any;
 
 @Component({
@@ -14,20 +14,16 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    navigation();
-    this.navigationConfigs();
-    //this.navigationConfigs2();
+    navigationWithClick();
+    this.navigationWithArrows();
+    this.navigationWithScroll();
   }
 
   scrollTo(element: any): void {
     (document.getElementById(element) as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   }
 
-  navigationConfigs() {
-    var button_one = document.getElementById('bt-one');
-    var button_two = document.getElementById('bt-two');
-    var button_three = document.getElementById('bt-three');
-    var button_four = document.getElementById('bt-four');
+  navigationWithArrows() {
 
     //quando abre a tela, posicionar na section 1
     $('section').each(function (this: HTMLButtonElement) {
@@ -35,23 +31,15 @@ export class HomeComponent implements OnInit {
         let section = $(this).attr('id');
         if (section === 'sectionOne') {
 
-          $(button_one).removeClass('navigation-one');
-          $(button_one).addClass('navigation-one-active');
+          addAndRemoveClassOnKeyUp('', section);
 
-          $(button_two).removeClass('navigation-two-active');
-          $(button_two).addClass('navigation-two');
-
-          $(button_three).removeClass('navigation-three-active');
-          $(button_three).addClass('navigation-three');
-
-          $(button_four).removeClass('navigation-four-active');
-          $(button_four).addClass('navigation-four');
         }
       }
     })
 
+    //trocar section ao navegar com as setas do teclado
     $(document).keydown(function (e: any) {
-      
+
       var $activeSection = $("section.active"), $newActiveSection;
 
       if (e.which == 38) {
@@ -60,14 +48,14 @@ export class HomeComponent implements OnInit {
         if (!$newActiveSection.length) {
           $newActiveSection = $("section").last();
         }
-        addAndRemoveClassOnKeyUp($newActiveSection[0]);
+        addAndRemoveClassOnKeyUp($newActiveSection[0], '');
       } else if (e.which == 40) {
         // Baixo
         $newActiveSection = $activeSection.next("section");
         if (!$newActiveSection.length) {
           $newActiveSection = $("section").first();
         }
-        addAndRemoveClassOnKeyUp($newActiveSection[0]);
+        addAndRemoveClassOnKeyUp($newActiveSection[0], '');
       }
       $activeSection.removeClass("active");
       $newActiveSection.addClass("active");
@@ -78,11 +66,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  /*navigationConfigs2() {
-    var button_one = document.getElementById('bt-one');
-    var button_two = document.getElementById('bt-two');
-    var button_three = document.getElementById('bt-three');
-    var button_four = document.getElementById('bt-four');
+  navigationWithScroll() {
 
     //quando abre a tela, posicionar na section 1
     $('section').each(function (this: HTMLButtonElement) {
@@ -98,17 +82,8 @@ export class HomeComponent implements OnInit {
             }
           });
 
-          $(button_one).removeClass('navigation-one');
-          $(button_one).addClass('navigation-one-active');
+          addAndRemoveClassOnKeyUp('', section);
 
-          $(button_two).removeClass('navigation-two-active');
-          $(button_two).addClass('navigation-two');
-
-          $(button_three).removeClass('navigation-three-active');
-          $(button_three).addClass('navigation-three');
-
-          $(button_four).removeClass('navigation-four-active');
-          $(button_four).addClass('navigation-four');
         }
       }
     })
@@ -131,17 +106,8 @@ export class HomeComponent implements OnInit {
               }
             });
 
-            $(button_one).removeClass('navigation-one');
-            $(button_one).addClass('navigation-one-active');
+            addAndRemoveClassOnKeyUp('', section);
 
-            $(button_two).removeClass('navigation-two-active');
-            $(button_two).addClass('navigation-two');
-
-            $(button_three).removeClass('navigation-three-active');
-            $(button_three).addClass('navigation-three');
-
-            $(button_four).removeClass('navigation-four-active');
-            $(button_four).addClass('navigation-four');
           } else if (section === 'sectionTwo') {
 
             $(window).bind('mousewheel DOMMouseScroll', function (event: any) {
@@ -153,17 +119,8 @@ export class HomeComponent implements OnInit {
               }
             });
 
-            $(button_two).removeClass('navigation-two');
-            $(button_two).addClass('navigation-two-active');
+            addAndRemoveClassOnKeyUp('', section);
 
-            $(button_one).removeClass('navigation-one-active');
-            $(button_one).addClass('navigation-one');
-
-            $(button_three).removeClass('navigation-three-active');
-            $(button_three).addClass('navigation-three');
-
-            $(button_four).removeClass('navigation-four-active');
-            $(button_four).addClass('navigation-four');
           } else if (section === 'sectionThree') {
 
             $(window).bind('mousewheel DOMMouseScroll', function (event: any) {
@@ -175,17 +132,8 @@ export class HomeComponent implements OnInit {
               }
             });
 
-            $(button_three).removeClass('navigation-three');
-            $(button_three).addClass('navigation-three-active');
+            addAndRemoveClassOnKeyUp('', section);
 
-            $(button_one).removeClass('navigation-one-active');
-            $(button_one).addClass('navigation-one');
-
-            $(button_two).removeClass('navigation-two-active');
-            $(button_two).addClass('navigation-two');
-
-            $(button_four).removeClass('navigation-four-active');
-            $(button_four).addClass('navigation-four');
           } else if (section === 'sectionFour') {
 
             $(window).bind('mousewheel DOMMouseScroll', function (event: any) {
@@ -194,21 +142,12 @@ export class HomeComponent implements OnInit {
               }
             });
 
-            $(button_four).removeClass('navigation-four');
-            $(button_four).addClass('navigation-four-active');
+            addAndRemoveClassOnKeyUp('', section);
 
-            $(button_one).removeClass('navigation-one-active');
-            $(button_one).addClass('navigation-one');
-
-            $(button_two).removeClass('navigation-two-active');
-            $(button_two).addClass('navigation-two');
-
-            $(button_three).removeClass('navigation-three-active');
-            $(button_three).addClass('navigation-three');
           }
         }
       });
     });
-  }*/
+  }
 
 }

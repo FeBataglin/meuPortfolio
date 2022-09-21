@@ -1,4 +1,4 @@
-function navigation() {
+function navigationWithClick() {
     var button_one = document.getElementById('bt-one');
     var button_two = document.getElementById('bt-two');
     var button_three = document.getElementById('bt-three');
@@ -61,13 +61,14 @@ function navigation() {
     }
 }
 
-function addAndRemoveClassOnKeyUp(element) {
+function addAndRemoveClassOnKeyUp(element, section) {
+
     var button_one = document.getElementById('bt-one');
     var button_two = document.getElementById('bt-two');
     var button_three = document.getElementById('bt-three');
     var button_four = document.getElementById('bt-four');
 
-    if (element.id === 'sectionOne') {
+    if (element.id === 'sectionOne' || section === 'sectionOne') {
 
         $(button_one).removeClass('navigation-one');
         $(button_one).addClass('navigation-one-active');
@@ -80,7 +81,7 @@ function addAndRemoveClassOnKeyUp(element) {
 
         $(button_four).removeClass('navigation-four-active');
         $(button_four).addClass('navigation-four');
-    } else if (element.id === 'sectionTwo') {
+    } else if (element.id === 'sectionTwo' || section === 'sectionTwo') {
 
         $(button_two).removeClass('navigation-two');
         $(button_two).addClass('navigation-two-active');
@@ -93,7 +94,7 @@ function addAndRemoveClassOnKeyUp(element) {
 
         $(button_four).removeClass('navigation-four-active');
         $(button_four).addClass('navigation-four');
-    } else if (element.id === 'sectionThree') {
+    } else if (element.id === 'sectionThree' || section === 'sectionThree') {
 
         $(button_three).removeClass('navigation-three');
         $(button_three).addClass('navigation-three-active');
@@ -106,7 +107,7 @@ function addAndRemoveClassOnKeyUp(element) {
 
         $(button_four).removeClass('navigation-four-active');
         $(button_four).addClass('navigation-four');
-    } else if (element.id === 'sectionFour') {
+    } else if (element.id === 'sectionFour' || section === 'sectionFour') {
 
         $(button_four).removeClass('navigation-four');
         $(button_four).addClass('navigation-four-active');
