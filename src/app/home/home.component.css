@@ -17,19 +17,22 @@ section {
 }
 
 .sectionOne {
-    background: linear-gradient(81deg, #6D7874 50%, white 50%);
+    background: linear-gradient(98.5deg, white 50%, #6D7874 50%);
 }
 
 .sectionTwo {
-    background: #ec4b5b;
+    background: linear-gradient(81.5deg, #6D7874 50%, white 50%);
+    border-bottom: 2px solid #212529;
+    border-top: 2px solid #212529;
 }
 
 .sectionThree {
-    background: rgb(67, 91, 175);
+    background: linear-gradient(98.5deg, white 50%, #6D7874 50%);
+    border-bottom: 2px solid #212529;
 }
 
 .sectionFour {
-    background: lightsalmon;
+    background: linear-gradient(81.5deg, #6D7874 50%, white 50%);
 }
 
 .navigationButton {
@@ -82,7 +85,7 @@ section {
 .navigationButton .navigation-two:hover .tooltip-two,
 .navigationButton .navigation-two:hover .tooltip-two::before {
     transform: scale(1.2);
-    background-color: #ec4b5b;
+    background-color: white;
     color: black;
 }
 
@@ -90,7 +93,7 @@ section {
 .navigationButton .navigation-three:hover .tooltip-three,
 .navigationButton .navigation-three:hover .tooltip-three::before {
     transform: scale(1.2);
-    background-color: rgb(67, 91, 175);
+    background-color: #6D7874;
     color: black;
 }
 
@@ -98,7 +101,7 @@ section {
 .navigationButton .navigation-four:hover .tooltip-four,
 .navigationButton .navigation-four:hover .tooltip-four::before {
     transform: scale(1.2);
-    background-color: lightsalmon;
+    background-color: white;
     color: black;
 }
 
@@ -153,7 +156,7 @@ section {
 }
 
 .navigationButton .navigation-one-active::after {
-    content: 'Início';
+    content: '';
     position: absolute;
     padding: 5px;
     border-radius: 10px;
@@ -165,12 +168,12 @@ section {
 
 .navigationButton .navigation-two-active {
     transform: scale(1.2);
-    background-color: #ec4b5b;
+    background-color: #6D7874;
     color: black;
 }
 
 .navigationButton .navigation-two-active::after {
-    content: 'Sobre';
+    content: '';
     position: absolute;
     padding: 5px;
     border-radius: 10px;
@@ -182,12 +185,12 @@ section {
 
 .navigationButton .navigation-three-active {
     transform: scale(1.2);
-    background-color: rgb(67, 91, 175);
+    background-color: #6D7874;
     color: black;
 }
 
 .navigationButton .navigation-three-active::after {
-    content: 'Portfólio';
+    content: '';
     position: absolute;
     padding: 5px;
     border-radius: 10px;
@@ -199,13 +202,12 @@ section {
 
 .navigationButton .navigation-four-active {
     transform: scale(1.2);
-    background-color: lightsalmon;
-    ;
+    background-color: #6D7874;
     color: black;
 }
 
 .navigationButton .navigation-four-active::after {
-    content: 'Contato';
+    content: '';
     position: absolute;
     padding: 5px;
     border-radius: 10px;
@@ -234,6 +236,7 @@ section {
     position: relative;
     bottom: 20px;
     text-align: center;
+    font-weight: bold;
 }
 
 .bi {
@@ -242,7 +245,7 @@ section {
 }
 
 .icons {
-    position: fixed;
+    position: absolute;
     left: 0px;
     bottom: 0px;
 }
@@ -368,9 +371,44 @@ section {
 
 }
 
-.vl {
+.vertical-ligne-right {
     position: absolute;
     border-left: 2px solid #212529;
-    height: 101.5%;
-    transform: rotate(-9deg);
+    height: 101.2%;
+    transform: rotate(8.6deg);
+}
+
+.vertical-ligne-left {
+    position: absolute;
+    border-left: 2px solid #212529;
+    height: 101.2%;
+    transform: rotate(-8.6deg);
+}
+
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "DmSans";
+    src: url(../../assets/fonts/DmSansRegular-ZVWM3.ttf);
+}
+
+.aboutText {
+    font-family: "DmSans", Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    position: relative;
+    text-align: left;
+    color: white;
+    width: 30%;
+    float: left;
+    margin-left: 10px;
+}
+
+.habilities {
+    font-family: "DmSans", Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    position: relative;
+    text-align: left;
+    color: white;
+    width: 30%;
+    float: left;
+    margin-left: 10px;
 }
